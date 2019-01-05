@@ -1,0 +1,23 @@
+---
+title: "MyWebsite"
+author: "PNM"
+date: "January 5, 2019"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(leaflet)
+```
+
+## January 5, 2019
+
+```{r}
+locData <- data.frame(lat = c(36.012222,36.952766,37.85,37.788056,42.381111), lng = c(-113.811111, -111.441268,-119.55, -122.4075, -76.871111))
+my_map <- leaflet(locData) %>% 
+  addTiles() %>% 
+  addMarkers(lat = locData$lat, lng = locData$lng,label = c("Grand Canyon West","Antelope Canyon","Union Square  San Fransisco","Watkins Glen"))
+my_map
+
+```
+
